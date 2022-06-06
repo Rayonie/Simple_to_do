@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         btnDel.setEnabled(true);
                         btnAdd.setEnabled(false);
                         etElement.getText().clear();
+                        etElement.setText("0");
                         etElement.setInputType( InputType.TYPE_CLASS_NUMBER );
                         break;
                 }
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 int pos = Integer.parseInt(number);
                 if(tasks.isEmpty()){
                     Toast.makeText(getApplicationContext(),"There is nothing in the array to delete",Toast.LENGTH_SHORT).show();
-                }else if(pos > tasks.size() || pos < 0){
+                }else if(pos > tasks.size() || pos <= 0){
                     Toast.makeText(getApplicationContext(),"The number entered is smaller than the array or bigger",Toast.LENGTH_SHORT).show();
                 }else{
                     tasks.remove((pos-1));
